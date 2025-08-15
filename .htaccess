@@ -1,0 +1,10 @@
+# Habilitar mod_rewrite
+RewriteEngine On
+
+# Definir a base (caso o seu projeto esteja em uma subpasta, ex: "/meu-projeto")
+RewriteBase /
+
+# Redirecionar todas as requisições para o index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

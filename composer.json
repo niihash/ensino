@@ -1,0 +1,15 @@
+{
+    "name": "plataforma/ensino",
+    "autoload": {
+        "psr-4": {
+            "Plataforma\\Ensino\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "niihash",
+            "email": "50837663+niihash@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
