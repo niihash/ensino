@@ -34,7 +34,3 @@ $router->get("/matriculas/{id}", "\Plataforma\Ensino\app\Controller\MatriculaCon
 $router->get("/matriculas/{id}/edit", "\Plataforma\Ensino\app\Controller\MatriculaController@edit", [\Plataforma\Ensino\Middleware\HostMiddleware::class]);
 $router->patch("/matriculas/{id}/edit", "\Plataforma\Ensino\app\Controller\MatriculaController@update", [\Plataforma\Ensino\Middleware\HostMiddleware::class]);
 $router->delete("/matriculas/{id}", "\Plataforma\Ensino\app\Controller\MatriculaController@destroy", [\Plataforma\Ensino\Middleware\HostMiddleware::class]);
-
-//Rotas para Idiomas
-//$router->post("/projetoChar/language/login","InternacionalizationController@login",[\Plataforma\Ensino\Middleware\GuestMiddleware::class]);
-//$router->post("/projetoChar/language/dashboard","InternacionalizationController@dashboard",[\Plataforma\Ensino\Middleware\HostMiddleware::class]);
