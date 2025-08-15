@@ -91,6 +91,29 @@ class AlunoModel
         return $this->pdo->execNonQuery($sql, $param);
     }
 
+    public function search(string $term): array | null
+    {
+        $sql = "SELECT id, nome, email, dataNasc 
+            FROM alunos 
+            WHERE nome LIKE :term_nome OR email LIKE :term_email
+            ORDER BY id ASC";
+
+        $rows = $this->pdo->execQuery($sql, [
+            ':term_nome' => "%$term%",
+            ':term_email' => "%$term%"
+        ]);
+
+        $listAlunos = null;
+        if ($rows) {
+            foreach ($rows as $row) {
+                $listAlunos[] = $this->arrayToObject($row);
+            }
+        }
+
+        return $listAlunos;
+    }
+
+
     private function arrayToObject($param): object
     {
         return (object)[

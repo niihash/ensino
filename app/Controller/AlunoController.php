@@ -16,8 +16,14 @@ class AlunoController
 
     public function index()
     {
-        // listagem
-        $listAluno = $this->aluno->getAll();
+        $search = $_GET['q'] ?? null;
+
+        if ($search) {
+            $listAluno = $this->aluno->search($search);
+        } else {
+            $listAluno = $this->aluno->getAll();
+        }
+
         require_once(BASE_PATH . "/../app/View/aluno/index.view.php");
     }
 
