@@ -57,6 +57,12 @@ docker-compose exec php php Database/criar_tabelas.php
 docker-compose exec php php Database/seed.php
 ```
 
+### 8 Execute o teste de banco de dados para aluno
+
+```bash
+docker-compose exec php php tests/test_aluno.php
+```
+
 ---
 
 ## Acessando a aplicação
@@ -72,3 +78,4 @@ docker-compose exec php php Database/seed.php
 ## Observações
 
 * Todos os scripts de criação e seed das tabelas estão em `Database/`.
+* O script de teste se encontra em `test/`.
